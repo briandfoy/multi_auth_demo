@@ -12,12 +12,17 @@ handle the auth. In this example, that's in [lib/MultiAuthDemo/Plugin/OpenAPI.pm
 
 ## Run the server
 
-The basic auth password and the token are both `1234`. For basic auth, the
-Base64 version is `MTIzNA==`:
+Install a couple of modules:
+
+	$ cpan Mojolicious Mojolicious::Plugin::OpenAPI
+
+Start the server:
 
 	$ morbo script/multi_auth_demo
 	Web application available at http://127.0.0.1:3000
 
+The basic auth password and the token are both `1234`. For basic auth, the
+Base64 version is `MTIzNA==`:
 	$ curl -H 'Authorization: basic MTIzNA==' http://localhost:3000/api/hello
 	{"auth_type":"basic","greeting":"Hello"}
 
