@@ -3,8 +3,8 @@
 I have a project where both token and HTTP basic auth are used. Send either
 one and it all works out.
 
-The [/openapi.yml] file needs to define all of the auth methods, and Mojo has to
-handle the auth. In this example, that's in [lib/MultiAuthDemo/Plugin/OpenAPI.pm].
+The [/openapi.yml](/openapi.yml) file needs to define all of the auth methods, and Mojo has to
+handle the auth. In this example, that's in [lib/MultiAuthDemo/Plugin/OpenAPI.pm](lib/MultiAuthDemo/Plugin/OpenAPI.pm).
 
 ## Run the tests
 
