@@ -1,0 +1,46 @@
+openapi: '3.0.0'
+info:
+  description: 'Demo for using multiple auth paths in OpenAPI'
+  version: 2.0.0
+  title: MultiAuthDemo for OpenAPI
+  contact:
+    email: 'nobody@example.com'
+  license:
+    name: 'Artistic2'
+    url: 'https://perlfoundation.org/artistic-license-20.html'
+servers:
+  - url: http://localhost/api
+    variables:
+      scheme:
+        description: 'The test API'
+        enum:
+          - http
+        default: http
+security:
+  - api_token: []
+  - basic_auth: []
+paths:
+  /hello:
+    get:
+      x-mojo-to: Main#hello
+      operationId: hello
+      responses:
+        '200':
+          $ref: '#/components/responses/message'
+components:
+  parameters: {}
+  responses:
+    message:
+      description: "Hello"
+      content:
+        application/json:
+          schema:
+            type: object
+  securitySchemes:
+    api_token:
+      type: apiKey
+      in: header
+      name: X-Api-Header
+    basic_auth:
+      type: http
+      scheme: basic

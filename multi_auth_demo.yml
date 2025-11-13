@@ -1,0 +1,5 @@
+---
+secrets:
+  - 695c547a064bee464046b7a163922f67e060af81
+openapi_spec_path:
+  - openapi.yml
